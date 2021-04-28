@@ -1,13 +1,14 @@
 public class Calculadora{
-    private suma = 0;
-    private resta = 0;
-    private multiplicacion = 0;
-    private division = 0;
+    private int suma = 0;
+    private int resta = 0;
+    private int multiplicacion = 0;
+    private int division = 0;
     private int opcion;
     Scanner s1 = new Scanner(System.in);
     private String decision;
     private int num1;
     private int num2;
+    private static Calculadora menu = new Calculadora();
 
     public void Menu(){
         do{
@@ -20,14 +21,32 @@ public class Calculadora{
 
             switch(opcion){
                 case 1:
-                    System.out.println("Intoduca el primer número ");
-                    num1 = nextInt();
+                    System.out.println("Intoduzca el primer número: ");
+                    num1 = s1.nextInt();
+                    System.out.println("Introduzca el segundo número: ");
+                    num2 = s1.nextInt();
+                    menu.Sumar(num1, num2);
                     break;
                 case 2:
+                    System.out.println("Intoduzca el primer número: ");
+                    num1 = s1.nextInt();
+                    System.out.println("Introduzca el segundo número: ");
+                    num2 = s1.nextInt();
+                    menu.Restar(num1, num2);
                     break;
                 case 3:
+                    System.out.println("Intoduzca el primer número: ");
+                    num1 = s1.nextInt();
+                    System.out.println("Introduzca el segundo número: ");
+                    num2 = s1.nextInt();
+                    menu.Multiplicar(num1, num2);
                     break;
                 case 4:
+                    System.out.println("Intoduzca el primer número: ");
+                    num1 = s1.nextInt();
+                    System.out.println("Introduzca el segundo número: ");
+                    num2 = s1.nextInt();
+                    menu.Dividir(num1, num2);
                     break;
                 default:
                     System.out.println("La opción introducida es incorrecta ");
@@ -39,7 +58,101 @@ public class Calculadora{
         }while(decision.equalsIgnoreCase("s"));
     }
 
-    public int sumar(){
-
+    public void Sumar(int num1, int num2){
+        suma = num1 + num2;
+        System.out.println("Resultado: "+suma);
     }
+
+    public void Restar(int num1, int num2){
+        resta = num1 - num2;
+        System.out.println("Resultado: "+resta);
+    }
+
+    public void Multiplicar(int num1, int num2){
+        multiplicacion = num1 * num2;
+        System.out.println("Resultado: "+multiplicacion);
+    }
+
+    public void Dividir(int num1, int num2){
+        division = num1 / num2;
+        System.out.println("Resultado: "+division);
+    }
+    
+    public static void main(String[] args) {
+        menu.Menu();
+    }
+
+    public int getSuma() {
+        return suma;
+    }
+
+    public void setSuma(int suma) {
+        this.suma = suma;
+    }
+
+    public int getResta() {
+        return resta;
+    }
+
+    public void setResta(int resta) {
+        this.resta = resta;
+    }
+
+    public int getMultiplicacion() {
+        return multiplicacion;
+    }
+
+    public void setMultiplicacion(int multiplicacion) {
+        this.multiplicacion = multiplicacion;
+    }
+
+    public int getDivision() {
+        return division;
+    }
+
+    public void setDivision(int division) {
+        this.division = division;
+    }
+
+    public int getOpcion() {
+        return opcion;
+    }
+
+    public void setOpcion(int opcion) {
+        this.opcion = opcion;
+    }
+
+    public String getDecision() {
+        return decision;
+    }
+
+    public void setDecision(String decision) {
+        this.decision = decision;
+    }
+
+    public int getNum1() {
+        return num1;
+    }
+
+    public void setNum1(int num1) {
+        this.num1 = num1;
+    }
+
+    public int getNum2() {
+        return num2;
+    }
+
+    public void setNum2(int num2) {
+        this.num2 = num2;
+    }
+
+    public static Calculadora getMenu() {
+        return menu;
+    }
+
+    public static void setMenu(Calculadora menu) {
+        Calculadora.menu = menu;
+    }
+    
+}
 }
