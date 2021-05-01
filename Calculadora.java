@@ -4,7 +4,7 @@ public class Calculadora{
     private int multiplicacion = 0;
     private int division = 0;
     private int opcion;
-    Scanner s1 = new Scanner(System.in);
+    Scanner sc = new Scanner(System.in);
     private String decision;
     private int num1;
     private int num2;
@@ -22,30 +22,30 @@ public class Calculadora{
             switch(opcion){
                 case 1:
                     System.out.println("Intoduzca el primer número: ");
-                    num1 = s1.nextInt();
+                    num1 = sc.nextInt();
                     System.out.println("Introduzca el segundo número: ");
-                    num2 = s1.nextInt();
+                    num2 = sc.nextInt();
                     menu.Sumar(num1, num2);
                     break;
                 case 2:
                     System.out.println("Intoduzca el primer número: ");
-                    num1 = s1.nextInt();
+                    num1 = sc.nextInt();
                     System.out.println("Introduzca el segundo número: ");
-                    num2 = s1.nextInt();
+                    num2 = sc.nextInt();
                     menu.Restar(num1, num2);
                     break;
                 case 3:
                     System.out.println("Intoduzca el primer número: ");
-                    num1 = s1.nextInt();
+                    num1 = sc.nextInt();
                     System.out.println("Introduzca el segundo número: ");
-                    num2 = s1.nextInt();
+                    num2 = sc.nextInt();
                     menu.Multiplicar(num1, num2);
                     break;
                 case 4:
                     System.out.println("Intoduzca el primer número: ");
-                    num1 = s1.nextInt();
+                    num1 = sc.nextInt();
                     System.out.println("Introduzca el segundo número: ");
-                    num2 = s1.nextInt();
+                    num2 = sc.nextInt();
                     menu.Dividir(num1, num2);
                     break;
                 default:
@@ -54,7 +54,7 @@ public class Calculadora{
             }
 
             System.out.println("¿Desea realizar otra operación? S/N ");
-            decision = s1.next();
+            decision = sc.next();
         }while(decision.equalsIgnoreCase("s"));
     }
 
