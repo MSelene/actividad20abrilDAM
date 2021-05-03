@@ -52,9 +52,13 @@ public class Calculadora{
                     System.out.println("La opción introducida es incorrecta ");
                     break;
             }
-
-            System.out.println("¿Desea realizar otra operación? S/N ");
-            decision = sc.next();
+            do {
+                System.out.println("¿Desea realizar otra operación? S/N ");
+                decision = sc.next();
+                if(!decision.equalsIgnoreCase("s") && !desicion.equalsIgnoreCase("n")) {
+					System.out.println("Error, escriba s o n");
+				}
+            }while(!decision.equalsIgnoreCase("s") && !desicion.equalsIgnoreCase("n"));
         }while(decision.equalsIgnoreCase("s"));
     }
 
